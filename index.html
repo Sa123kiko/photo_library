@@ -17,24 +17,24 @@
   <div class="container">
       <div id="img_unit">
 
-          <div class="photo">
-              <img src="img/pumpkin-soup-297.jpg">
-              <div class="inner"><p>コメント1<span>name01</span></p></div>
-          </div>
+        <!-- <div class="photo">
+            <img src="img/pumpkin-soup-297.jpg">
+            <div class="inner"><p>コメント1<span>name01</span></p></div>
+        </div>
 
-          <div class="photo">
-            <img src="img/coffe_1280.jpg">
-            <div class="inner">
-              <p>コメント2<span>name02</span></p>
-            </div>
+        <div class="photo">
+          <img src="img/coffe_1280.jpg">
+          <div class="inner">
+            <p>コメント2<span>name02</span></p>
           </div>
+        </div>
 
-          <div class="photo">
-            <img src="img/dog_1280.jpg">
-            <div class="inner">
-              <p>コメント3<span>name03</span></p>
-            </div>
+        <div class="photo">
+          <img src="img/dog_1280.jpg">
+          <div class="inner">
+            <p>コメント3<span>name03</span></p>
           </div>
+        </div> -->
 
       </div>
 
@@ -48,16 +48,36 @@
       "caption": "コメント1" 
     },
     {  
-      "path": "img/img02.jpg",
+      "path": "img/coffe_1280.jpg",
       "name": "name02",
       "caption": "コメント2"
     }
   ];
   
-  var img = [
+  var img;
+  var caption;
+  var div;
 
-  ]
+  //要素img作成
+  img = document.createElement('img');
+  img.setAttribute('src',images[0].path)
 
+  //要素caption作成
+  caption = document.createElement('div');
+  caption.className = 'inner';
+  caption.innerHTML = '<p>' + images[0].caption + '<span>' + images[0].name + '</span></p>';
+  // これは <div class="inner"><p>caption<span>name</span></p>
+
+  div = document.createElement('div');
+  div.className = 'photo';
+  div.appendChild(img);
+  div.appendChild(caption);
+  //上で作った要素'imgとcaption'をappendChildで追加してる
+  //appendChildは要素の追加｡
+
+
+  document.getElementById('img_unit').appendChild(div);
+  //大枠のdivタグ､最後に18行目のid=img_unitにdivタグを追加
 
   </script>
 
